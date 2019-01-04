@@ -1,0 +1,25 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /open1/{doc} {
+      allow read, write: if true;
+    }
+
+    match /open2/{document=**} {
+      allow read, write: if true;
+    }
+
+    match /users/{uid} {
+        match /private/{doc} {
+            allow read, write: if request.auth.uid == uid;
+        }
+        match /public/{doc} {
+            allow read: if true;
+            allow write: if request.auth.uid == uid;
+        }
+    }
+
+    // match /NoSecurityRule {
+    //     allow read, write: if true;
+    // }
+  }
+}

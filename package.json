@@ -1,0 +1,16 @@
+{
+  "name": "firestore-emulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@firebase/testing": "^0.5.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.3"
+  }
+}
